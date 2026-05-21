@@ -1,6 +1,14 @@
 const clearButton = document.getElementById("clear-button");
 const blocksButton = document.getElementById("blocks-button");
 
+function getRandomRGB() {
+  const r = Math.floor(Math.random() * 255) + 1;
+  const g = Math.floor(Math.random() * 255) + 1;
+  const b = Math.floor(Math.random() * 255) + 1;
+
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
 blocksButton.addEventListener("click", () => {
   const newSize = prompt("Enter the number of blocks per side (max 64):");
   const size = Math.min(Math.max(parseInt(newSize), 1), 64);
@@ -14,7 +22,7 @@ blocksButton.addEventListener("click", () => {
     const div = document.createElement("div");
     div.classList.add("pixel");
     div.addEventListener("mouseover", () => {
-      div.style.backgroundColor = "black";
+      div.style.backgroundColor = getRandomRGB();
     });
     container.appendChild(div);
   }
@@ -26,5 +34,3 @@ clearButton.addEventListener("click", () => {
     pixel.style.backgroundColor = "transparent";
   });
 });
-
-
