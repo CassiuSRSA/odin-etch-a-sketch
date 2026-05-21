@@ -11,16 +11,21 @@ body {
 }
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 320px;
-  height: 320px;
+  display: grid;
+
+  height: 500px;
+  width: 500px;
+  border: 1px solid black;
 }
 
 .pixel {
-  width: 20px;
-  height: 20px;
   border: 1px solid red;
+}
+
+#blocks-button {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 16px;
 }
 
 #clear-button {
